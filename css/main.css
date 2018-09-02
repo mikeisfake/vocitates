@@ -1,0 +1,377 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+  font-family: 'Cutive Mono', monospace;
+  color: #fff;
+  text-align: center;
+  background-color: #111;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+li {
+  list-style: none;
+}
+
+h1, h2 {
+  font-family: 'Teko';
+  font-size: 5em;
+  letter-spacing: 1px;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+}
+
+.blocker {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 1;
+  box-sizing: border-box;
+  background-color: transparent;
+  text-align: center;
+}
+
+.blocker:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.05em;
+}
+
+.blocker.behind {
+  background-color: transparent;
+}
+
+.modal {
+  display: none;
+  vertical-align: middle;
+  position: relative;
+  z-index: 2;
+  box-sizing: border-box;
+  width: 70%;
+  background-color: #111;
+  border: 1px solid #262626;
+  color: #eee;
+  border-radius: 3px;
+  line-height: 170%;
+}
+
+.modal img {
+  margin-bottom: -8px;
+  max-width: 100%;
+  border-radius: 3px;
+}
+
+.modal h2 {
+  font-size: 2.5em;
+  margin: 10px 0;
+}
+
+.modal .themeinfo {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: rgba(0, 0, 0, .8);
+  border-radius: 3px;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  top: 0;
+  left: 0;
+  padding: 10px 30%;
+  text-align: left;
+  opacity: 0;
+  transition: .7s ease;
+}
+
+.modal:hover .themeinfo {
+  opacity: 1;
+  animation: bounceInDown .7s;
+}
+
+.themeinfo h3 {
+  width: 80%;
+  font-size: 1.2em;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.themeinfo ul li::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f00d";
+  margin-right: 10px;
+}
+
+#explore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#navlinks {
+  top: 10px;
+  transition: .5s ease;
+}
+
+ul#navlinks {
+  padding: 20px 8px;
+  transition: .5s ease;
+  background-color: #111;
+  border-radius: 3px;
+}
+
+.shadow {
+  box-shadow: 0 0 10px #000;
+}
+
+ul#navlinks li {
+  display: inline-block;
+}
+
+ul#navlinks li a {
+  padding: 8px;
+  margin: 0 4px;
+  border: 1px solid #262626;
+  border-radius: 3px;
+  background-color: #111;
+}
+
+ul#navlinks li a:hover .far, ul#navlinks li a:hover .fas {
+  color: tomato;
+}
+
+#top {
+  display: none;
+}
+
+#top a {
+  color: tomato;
+  border: 1px solid transparent !important;
+}
+
+#title {
+  display: flex;
+}
+
+#welcome {
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 3.5em;
+  color: tomato;
+  animation-name: clear;
+  animation-delay: 2.5s;
+}
+
+@keyframes clear {
+  0% {
+    width: 3.5em;
+  }
+  100% {
+    width: 0em;
+  }
+}
+
+#name span {
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+  font-size: .6em;
+}
+
+#follow {
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  width: calc(100vw - 25px);
+  margin: 0 auto;
+  margin-top: 25px;
+}
+
+#follow a {
+  padding: 8px;
+  margin: 0 5px;
+  border-radius: 3px;
+  color: #eee;
+  background-color: #111;
+}
+
+#follow a:hover {
+  color: tomato;
+  animation: jello 1s;
+}
+
+#about {
+  background-color: #eee;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.textblock {
+  width: 60%;
+  padding: 100px;
+  background-color: #111;
+  border-radius: 3px;
+  text-align: right;
+}
+
+.textblock h1 {
+  color: tomato;
+}
+
+.textblock p {
+  line-height: 150%;
+  font-size: 1.5em;
+}
+
+#themes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#themes>h1 {
+  writing-mode: vertical-lr;
+  position: relative;
+  margin-left: 30px;
+  transform: rotate(180deg)
+}
+
+#themewrapper {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-height: 90vh;
+  overflow: auto;
+}
+
+.themecard {
+  min-width: 500px;
+  width: 40%;
+  background-color: #000;
+  margin: 0 15px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 3px;
+}
+
+.themecard img {
+  width: 100%;
+}
+
+.themename {
+  width: 100%;
+  color: #eee;
+  font-size: 1.3em;
+  padding: 4px 8px;
+  float: left;
+  text-align: left;
+}
+
+.themecard:hover .themename {
+  color: tomato;
+}
+
+#ask {
+  background-color: #eee;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#ask h1 {
+  width: 500px;
+  text-align: right;
+  color: #111;
+  letter-spacing: -2px;
+}
+
+#resources {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#inspo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+#inspolinks ul{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-height: 50vh;
+  width: 70vw;
+  margin-top: 50px;
+}
+
+#inspolinks li {
+  width: 31.5%;
+  height: 15vh;
+  max-height: calc(50% - 60px);
+  text-align: left;
+  border-left: 5px solid #262626;
+  padding: 10px 15px 5px 25px;
+  margin: 10px;
+  line-height: 170%;
+  color: #fff;
+  background-color: #000;
+  overflow: auto;
+  transition: .2s;
+  border-radius:0 5px 5px 0;
+}
+
+#inspolinks li:hover {
+  border-left: 5px solid tomato;
+  animation: pulse .5s;
+}
+
+#inspolinks h2 {
+  color: #eee;
+  font-size: 2.2em;
+  margin-bottom: 10px;
+  transition: .2s;
+}
+
+#inspolinks h2:hover {
+  transform: translateX(5px);
+}
+
+#inspolinks li::before{
+  font-family: "Font Awesome 5 Free";
+  content: "\f02e";
+  margin-right: 10px;
+  float:left;
+  color: tomato;
+}
