@@ -1,3 +1,5 @@
+/*general styles*/
+
 * {
   box-sizing: border-box;
 }
@@ -21,13 +23,17 @@ li {
 
 h1, h2 {
   font-family: 'Teko';
-  font-size: 5em;
+  font-size: 3.5em;
   letter-spacing: 1px;
 }
 
 section {
   width: 100vw;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .blocker {
@@ -63,7 +69,8 @@ section {
   position: relative;
   z-index: 2;
   box-sizing: border-box;
-  width: 70%;
+  width: 80%;
+  min-width: 700px;
   background-color: #111;
   border: 1px solid #262626;
   color: #eee;
@@ -73,21 +80,18 @@ section {
 
 .modal img {
   margin-bottom: -8px;
-  max-width: 100%;
+  width: 100%;
   border-radius: 3px;
 }
 
 .modal h2 {
   font-size: 2.5em;
   margin: 10px 0;
+  text-align: center;
 }
 
-.modal .themeinfo {
+.themeinfo {
   position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   background: rgba(0, 0, 0, .8);
   border-radius: 3px;
   width: 100%;
@@ -95,10 +99,15 @@ section {
   overflow: auto;
   top: 0;
   left: 0;
-  padding: 10px 30%;
+  padding: 15px 33%;
   text-align: left;
   opacity: 0;
   transition: .7s ease;
+  overflow:auto;
+}
+
+.themeinfo > p {
+  text-align: center;
 }
 
 .modal:hover .themeinfo {
@@ -107,9 +116,7 @@ section {
 }
 
 .themeinfo h3 {
-  width: 80%;
-  font-size: 1.2em;
-  text-align: left;
+  font-size: 1.3em;
   margin-bottom: 10px;
 }
 
@@ -117,19 +124,16 @@ section {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f00d";
+  font-size: .6em;
   margin-right: 10px;
 }
 
-#explore {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.themeinfo ul li a:hover{
+  color: tomato;
 }
 
 #navlinks {
   top: 10px;
-  transition: .5s ease;
 }
 
 ul#navlinks {
@@ -137,14 +141,20 @@ ul#navlinks {
   transition: .5s ease;
   background-color: #111;
   border-radius: 3px;
+  z-index: 2;
 }
-
 .shadow {
   box-shadow: 0 0 10px #000;
 }
 
 ul#navlinks li {
   display: inline-block;
+  transition: .2s;
+}
+
+ul#navlinks li:hover {
+  transform: scale3d(1.09,1.09,1);
+  animation: bigger .7s;
 }
 
 ul#navlinks li a {
@@ -179,7 +189,7 @@ ul#navlinks li a:hover .far, ul#navlinks li a:hover .fas {
   width: 3.5em;
   color: tomato;
   animation-name: clear;
-  animation-delay: 2.5s;
+  animation-delay: 2s;
 }
 
 @keyframes clear {
@@ -194,7 +204,7 @@ ul#navlinks li a:hover .far, ul#navlinks li a:hover .fas {
 #name span {
   animation-duration: 1.5s;
   animation-iteration-count: infinite;
-  font-size: .6em;
+  font-size: .5em;
 }
 
 #follow {
@@ -219,42 +229,56 @@ ul#navlinks li a:hover .far, ul#navlinks li a:hover .fas {
   animation: jello 1s;
 }
 
+#home {
+  display: none;
+  position: fixed;
+  margin-top: 50px;
+  text-align: left;
+  transform: rotate(90deg);
+  mix-blend-mode: difference;
+}
+
+#home h1 {
+  font-size: 3em;
+}
+
+#home:hover {
+  animation: pulse 1s;
+}
+
 #about {
   background-color: #eee;
   height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
 }
 
 .textblock {
-  width: 60%;
-  padding: 100px;
+  width: 30%;
+  padding: 50px;
   background-color: #111;
-  border-radius: 3px;
+  border-radius: 5px;
   text-align: right;
 }
 
 .textblock h1 {
   color: tomato;
+  font-size: 3em;
 }
 
 .textblock p {
   line-height: 150%;
-  font-size: 1.5em;
+  font-size: 1.1em;
+  animation-delay: .3s;
 }
 
-#themes {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+ #themes {
+   flex-direction: row;
+ }
 
 #themes>h1 {
   writing-mode: vertical-lr;
   position: relative;
   margin-left: 30px;
+  flex-basis: 5;
   transform: rotate(180deg)
 }
 
@@ -264,44 +288,66 @@ ul#navlinks li a:hover .far, ul#navlinks li a:hover .fas {
   align-items: flex-start;
   justify-content: center;
   flex-direction: row;
-  flex-wrap: wrap;
   max-height: 90vh;
+  max-width: 60vw;
+  padding: 10px 0;
   overflow: auto;
+  border-radius: 5px;
+  background: #151515;
+  animation-delay: .5s;
+  animation-duration: 1.2s;
 }
 
 .themecard {
+  position: relative;
   min-width: 500px;
-  width: 40%;
-  background-color: #000;
-  margin: 0 15px;
-  margin-bottom: 10px;
-  padding: 5px;
+  margin: 10px;
   border-radius: 3px;
+  transition: .3s;
 }
+
+.themecard:hover{
+  transform: scale3d(.99,.99,1);
+}
+
+.themecard:hover img {
+  filter: blur(2px);
+}
+
 
 .themecard img {
   width: 100%;
+  border-radius: 3px;
 }
 
 .themename {
+  position: absolute;
+  top: 50%;
   width: 100%;
   color: #eee;
-  font-size: 1.3em;
-  padding: 4px 8px;
-  float: left;
-  text-align: left;
+  font-size: .8em;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+  opacity: 0;
+  transition: .8s;
 }
 
+.themename span {
+  border-radius: 3px;
+  padding: 15px;
+  background-color:rgba(17,17,17,.8);
+}
+
+
 .themecard:hover .themename {
-  color: tomato;
+  animation: fadeInUp .6s;
+  opacity: 1;
 }
 
 #ask {
   background-color: #eee;
   height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
 }
 
@@ -314,18 +360,17 @@ ul#navlinks li a:hover .far, ul#navlinks li a:hover .fas {
 
 #resources {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
 }
 
-#inspo{
+#inspo {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
 }
 
-#inspolinks ul{
+#inspolinks ul {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -349,29 +394,64 @@ ul#navlinks li a:hover .far, ul#navlinks li a:hover .fas {
   background-color: #000;
   overflow: auto;
   transition: .2s;
-  border-radius:0 5px 5px 0;
+  border-radius: 5px;
 }
 
 #inspolinks li:hover {
   border-left: 5px solid tomato;
-  animation: pulse .5s;
+  transform: scale3d(1.09,1.09,1.09);
+  animation: bigger 1s;
+}
+
+@keyframes bigger {
+  0% {
+    transform: scale3d(.95,.95,1);
+  }
+
+  33% {
+    transform: scale3d(1.1,1.1,1.1);
+  }
+
+  66% {
+    transform: scale3d(1.05,1.05,1);
+  }
+
+  100% {
+    transform: scale3d(1.09,1.09,1);
+  }
 }
 
 #inspolinks h2 {
   color: #eee;
   font-size: 2.2em;
   margin-bottom: 10px;
-  transition: .2s;
+  transition: .3s;
+}
+
+#inspolinks li::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f02e";
+  margin-right: 10px;
+  float: left;
+  color: tomato;
+}
+
+ul.inspo {
+  animation-delay: 1s;
 }
 
 #inspolinks h2:hover {
   transform: translateX(5px);
 }
 
-#inspolinks li::before{
-  font-family: "Font Awesome 5 Free";
-  content: "\f02e";
-  margin-right: 10px;
-  float:left;
-  color: tomato;
+#blog {
+  flex-direction: row;
+}
+
+
+#blog > h1 {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  align-self: flex-start;
+  margin-top: 11vh;
 }

@@ -1,0 +1,211 @@
+/*blog box general styles*/
+
+#blogcontain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 90px 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #eee;
+  height: 80vh;
+  width: 720px;
+  overflow: auto;
+}
+ /*remove default tumblr controls*/
+
+.iframe-controls--desktop {
+  display: none;
+}
+
+/*lightbox*/
+
+.vignette, #vignette {
+  opacity: 0;
+}
+
+.lightbox-image, #tumblr_lightbox img {
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  max-width: none;
+}
+
+.tmblr-lightbox, #tumblr_lightbox {
+  background-color: rgba(0, 0, 0, .8) !important;
+}
+
+/*post general styles*/
+
+.post {
+  position: relative;
+  width: 540px;
+  margin: 0 auto;
+  margin-bottom: 90px;
+  transition: all 2s ease .1s;
+  color: #111;
+  text-align: left;
+  letter-spacing: 1px;
+  line-height: 150%;
+  font-size: .9em;
+}
+
+.post b {
+  font-weight: 700;
+}
+
+.post a {
+  color: #7c7c7c;
+}
+
+.post a:hover {
+  color: tomato;
+}
+
+.post img {
+  max-width: 540px;
+}
+
+.post h1 {
+  line-height: 80%;
+}
+
+/*postinfo*/
+
+#postinfo {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  left: 550px;
+  padding: 8px;
+  background: #111;
+  text-align: right;
+  letter-spacing: 1px;
+  transition: .2s ease;
+  border: 1px solid #262626;
+  border-radius: 3px;
+}
+
+#postinfo a {
+  color: #eee;
+  font-size: 1.3em;
+}
+
+#postinfo a:hover {
+  color: tomato;
+}
+
+#postinfo h1 {
+  font-size: 2em;
+}
+
+#postinfo span {
+  color: #eee;
+  font-size: .8em;
+}
+
+/*caption*/
+
+.caption ul {
+  margin: 10px 0;
+  margin-left: 25px;
+}
+
+.caption li {
+  list-style-type: square;
+}
+
+.caption h2, .text h2 {
+  line-height: 100%;
+  font-size: 2.2em;
+}
+
+.avatar {
+  width: 30px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+blockquote.reblog {
+  border: 0;
+  margin: 0;
+  padding-top: 15px;
+}
+
+a.tumblr_blog {
+  position: relative;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  bottom: 10px;
+}
+
+/*ask and answer*/
+
+.quest {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.quest span {
+  font-size: 1em;
+}
+
+.asker {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+.asker img {
+  margin-right: 10px;
+  border-radius: 3px;
+}
+
+.ans {
+  text-align: left;
+  padding: 10px 0;
+}
+
+/*pagination*/
+
+#pagi {
+  position: relative;
+  width: 540px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#pagi .fas {
+  color: #111;
+  font-size: .7em;
+}
+
+#pagi .fas:hover {
+  color: tomato;
+}
+
+/*tags*/
+
+.tags{
+  display: flex;
+  justify-content: space-between;
+  text-transform: lowercase;
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
+  width: 100%;
+}
+
+.tags a{
+    padding: 0 5px;
+    font-family: 'Cutive Mono' , monospace;
+    letter-spacing: 0;
+}
+
+.via {
+  margin-top: 20px;
+  font-size: .8em;
+}
